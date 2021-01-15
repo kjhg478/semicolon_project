@@ -10,13 +10,10 @@ import { authenticateJwt } from "./passport"
 
 const PORT = process.env.PORT;
 
-const server = new GraphQLServer({
-    schema,
-    context: ({ request }) => ({ request })
-});
+const server = new GraphQLServer({ schema, context: ({ request }) => ({ request })});
 // context resover와 정보를 공유할 때 사용함
 server.express.use(logger("dev"));
 server.express.use(authenticateJwt);
 
-server.start({ port: PORT }, () => console.log(`✔ Server running on http://localhost:${PORT}`)
+server.start({ port: PORT }, () => console.log(`༼ つ ◕_◕ ༽つ Server running on http://localhost:${PORT}`)
 );

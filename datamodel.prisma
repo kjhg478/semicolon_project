@@ -56,3 +56,5 @@ type Message {
   to: User! @relation(name: "To")
   room: Room!
 }
+
+
